@@ -564,15 +564,15 @@
 }
 
 - (NSString *)encodeToBase64String:(UIImage *)image byCompressionRatio:(float)compressionRatio {
-    NSString *photo = @"";
-    NSData *data = UIImageJPEGRepresentation(image, compressionRatio);
-    if(data == nil) {
-        data = [NSData dataWithData:UIImagePNGRepresentation(image)];
-    }
-    photo = [NSString base64StringFromData:data length:[data length]];
-    //    photo = [photo stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
-    return photo;
-    //return [UIImagePNGRepresentation(image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    // NSString *photo = @"";
+    // NSData *data = UIImageJPEGRepresentation(image, compressionRatio);
+    // if(data == nil) {
+    //     data = [NSData dataWithData:UIImagePNGRepresentation(image)];
+    // }
+    // photo = [NSString base64StringFromData:data length:[data length]];
+    // //    photo = [photo stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
+    // return photo;
+    return [UIImagePNGRepresentation(image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
 }
 
 
